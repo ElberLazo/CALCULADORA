@@ -1,0 +1,84 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+# This workflow will install Deno then run `deno lint` and `deno test`.
+# For more information see: https://github.com/denoland/setup-deno
+
+name: Deno
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup repo
+        uses: actions/checkout@v4
+
+      - name: Setup Deno
+        # uses: denoland/setup-deno@v1
+        uses: denoland/setup-deno@61fe2df320078202e33d7d5ad347e7dcfa0e8f31  # v1.1.2
+        with:
+          deno-version: v1.x
+
+      # Uncomment this step to verify the use of 'deno fmt' on each commit.
+      # - name: Verify formatting
+      #   run: deno fmt --check
+
+      - name: Run linter
+        run: deno lint
+
+      - name: Run tests
+        run: deno test -A
+                    - nombre: Ejecutar prueba en Autify para Web
+  # Puedes anclar al commit exacto o a la versión.
+  # usos: autifyhq/acciones-web-test-run@a467d583f96440d53852875da474f8d196784385
+  usos: autifyhq/actions-web-test-run@v2.7.2
+  con:
+    # Token de acceso de Autify para Web.
+    token de acceso:
+    # URL de un escenario de prueba o plan de prueba, por ejemplo, https://app.autify.com/projects/<ID>/(scenarios|test_plans)/<ID>
+    URL de prueba de autify:
+    # Cuando es verdadero, la acción espera hasta que finalice la prueba.
+    esperar: # opcional, el valor predeterminado es falso
+    # Segundos de tiempo de espera.
+    tiempo de espera: # opcional
+    # Segundos de intervalo para sondear el resultado de la prueba mientras se espera.
+    intervalo: # opcional
+    # Reemplazos de URL, por ejemplo: http://example.com=http://example.net,http://example.org=http://example.net
+    reemplazos de URL: # opcional
+    # Cantidad máxima de reintentos mientras se espera. El comando puede tardar hasta `timeout * (max-retry-count + 1)`. Solo es efectivo con `wait`
+    recuento máximo de reintentos: # opcional
+    # Nombre de la ejecución de la prueba (no compatible con las ejecuciones del plan de prueba)
+    nombre-ejecución-prueba: # opcional
+    # Navegador para ejecutar el escenario de prueba (no compatible con las ejecuciones del plan de prueba)
+    navegador: # opcional
+    # Dispositivo para ejecutar el escenario de prueba (no compatible con las ejecuciones del plan de prueba)
+    dispositivo: # opcional
+    # Tipo de dispositivo para ejecutar el escenario de prueba (no compatible con las ejecuciones del plan de prueba)
+    tipo de dispositivo: # opcional
+    # Sistema operativo para ejecutar el escenario de prueba (no compatible con las ejecuciones del plan de prueba)
+    sistema operativo: # opcional
+    # Versión del sistema operativo para ejecutar el escenario de prueba (no compatible con las ejecuciones del plan de prueba)
+    versión del sistema operativo: # opcional
+    # Nombre del punto de acceso de Autify Connect
+    autify-connect: # opcional
+    # Cuando sea verdadero, inicie el cliente de Autify Connect
+    autify-connect-client: # opcional, el valor predeterminado es falso
+    # Argumentos de línea de comando adicionales que desea pasar al cliente de Autify Connect, por ejemplo, "--experimental-tunnel-proxy http://proxy".
+    argumentos adicionales del cliente de autify-connect: # opcional
+    # Una ruta a `autify` que se utilizará para invocar la CLI de Autify internamente. El valor predeterminado es buscar desde PATH.
+    autify-path: # opcional, el valor predeterminado es autify
+    # URL del instalador CLI de Autify
+    autify-cli-installer-url: # opcional, el valor predeterminado es https://autify-cli-assets.s3.amazonaws.com/autify-cli/channels/stable/install-cicd.bash
+          

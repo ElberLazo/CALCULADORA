@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Calorías Diarias</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Calorías Diarias</h1>
+        <form id="calorie-form">
+            <label for="sex">Sexo:</label>
+            <select id="sex" required>
+                <option value="hombre">Hombre</option>
+                <option value="mujer">Mujer</option>
+            </select>
+
+            <label for="weight">Peso (kg):</label>
+            <input type="number" id="weight" step="0.1" required>
+
+            <label for="height">Altura (cm):</label>
+            <input type="number" id="height" step="0.1" required>
+
+            <label for="age">Edad (años):</label>
+            <input type="number" id="age" required>
+
+            <label for="activity">Nivel de Actividad:</label>
+            <select id="activity" required>
+                <option value="sedentario">Sedentario</option>
+                <option value="ligero">Ligero</option>
+                <option value="moderado">Moderado</option>
+                <option value="activo">Activo</option>
+                <option value="muy activo">Muy Activo</option>
+            </select>
+
+            <button type="button" onclick="calculateCalories()">Calcular Calorías</button>
+        </form>
+
+        <div id="result" class="result"></div>
+    </div>
+    <footer>
+        <p>by: Elber</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+

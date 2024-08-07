@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('fondo.jpg'); /* Imagen de fondo */
+    background-size: cover; /* Ajusta la imagen al tamaño de la pantalla */
+    background-position: center; /* Centra la imagen */
+    color: #ecf0f1; /* Color de texto claro */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+h1 {
+    color: #e74c3c; /* Color rojo brillante */
+}
+
+form {
+    display: grid;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+    color: #ecf0f1; /* Color de texto claro */
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #7f8c8d; /* Color del borde */
+    border-radius: 5px;
+    background-color: #95a5a6; /* Fondo gris claro */
+    color: #2c3e50; /* Color de texto oscuro */
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e74c3c; /* Fondo rojo */
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c0392b; /* Rojo más oscuro al pasar el ratón */
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #ecf0f1; /* Color de texto claro */
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #bdc3c7; /* Color del texto del pie de página */
+}
+
+footer p {
+    margin: 0;
+}
